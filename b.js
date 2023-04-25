@@ -18,6 +18,7 @@ gainGoldButton.addEventListener("click", () => {
 upgradeButton.addEventListener("click", () => {
 	if (gold < preco) {
 		window.alert("POBRE!");
+		return;
 	}
 
 	gain++;
