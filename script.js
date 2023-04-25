@@ -34,19 +34,26 @@ upgradeButton.addEventListener("click", () => {
 			return;
 		}
 
-		let auto = document.createElement('button');
+		let auto = document.createElement("button");
 		auto.textContent = "Auto criquer: 1000 g";
 		auto.id = "criquer";
 		body.appendChild(auto);
+
+		let autoClickerCountDisplay = document.createElement("div");
+		autoClickerCountDisplay.innerHTML = "Auto Clickers: <br><span id='autoClickerCounter'>0</span>"
+		autoClickerCountDisplay.id = "autoClickerCount"
+		body.appendChild(autoClickerCountDisplay)
 	}
 
 	let auto = document.getElementById("criquer");
+	let autoClickerCountDisplay = document.getElementById("autoClickerCounter");
 	if (auto) {
 		auto.addEventListener("click", () => {
 			if (gold >= 1000){
 				gold -= 1000;
 				quantityOfClickers++;
 				goldDisplay.innerText = `${gold} g`;
+				autoClickerCountDisplay.innerText = quantityOfClickers;
 			}
 			else {
 				window.alert("POBRE!");
