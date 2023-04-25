@@ -57,7 +57,14 @@ upgradeButton.addEventListener("click", () => {
 	}
 })
 
-const incrementPoints = () => {
-	gold += quantityOfClickers;
-	goldDisplay.innerText = `${gold} g`;
+const autoClickerTime = delay => new Promise(result => setTimeout(result, delay));
+
+const autoClickerRunner = async() => {
+	while (true) {
+		gold += quantityOfClickers;
+		goldDisplay.innerText = `${gold} g`;
+		await autoClickerTime(2000);
+	}
 }
+
+autoClickerRunner();
