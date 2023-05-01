@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
 :root {
   --backgroundColor: #9ec5da;
   --borderColor: #000000;
@@ -10,15 +11,36 @@
   font-weight: normal;
   font-size: 100%;
   box-sizing: border-box;
+  font-family: "Instrument Serif", serif;
 }
 
 body {
+  background-color: var(--backgroundColor);
   width: 100%;
+}
+
+button#upgradeStoreButton {
+  margin: 0.3em;
+  min-width: fit-content;
+  max-width: 35%;
+}
+
+div#upgradeStore {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 0.7em;
-  background-color: var(--backgroundColor);
+  align-items: center;
+  display: none;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  margin-bottom: 0.3em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  align-items: center;
 }
 
 h1 {
@@ -38,6 +60,7 @@ button, #par, #autoClickerCount {
   background-color: var(--itemBackgroundColor);
   text-align: center;
   padding: 0.3em 0;
+  font-size: 1.3em;
 }
 
 div#autoClickerCount {

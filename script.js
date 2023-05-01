@@ -3,12 +3,25 @@ const gainGoldButton = document.getElementById("bot");
 const upgradeButton = document.getElementById("up");
 const levelDisplay = document.getElementById("level");
 const body = document.getElementsByTagName("body")[0];
+const htmlMain = document.querySelector("main");
+const upgradeStore = document.querySelector("#upgradeStore");
+const upgradeStoreButton = document.querySelector("#upgradeStoreButton");
 let quantityOfClickers = 0;
 let gold = 0;
 let gain = 1;
 let preco = 50;
 let level = 0;
 let clickerUnlocked = false;
+
+upgradeStoreButton.addEventListener("click", () => {
+	if (upgradeStore.style.display === "flex") {
+		upgradeStore.style.display = "none";
+		upgradeStoreButton.innerText = "Loja de Upgrades";
+	} else {
+		upgradeStore.style.display = "flex";
+		upgradeStoreButton.innerText = "Fechar Loja";
+	}	
+})
 
 gainGoldButton.addEventListener("click", () => {
 	gold += gain;
@@ -37,12 +50,12 @@ upgradeButton.addEventListener("click", () => {
 		let auto = document.createElement("button");
 		auto.textContent = "Auto criquer: 1000 g";
 		auto.id = "criquer";
-		body.appendChild(auto);
+		htmlMain.appendChild(auto);
 
 		let autoClickerCountDisplay = document.createElement("div");
 		autoClickerCountDisplay.innerHTML = "Auto Clickers: <br><span id='autoClickerCounter'>0</span>"
 		autoClickerCountDisplay.id = "autoClickerCount"
-		body.appendChild(autoClickerCountDisplay)
+		htmlMain.appendChild(autoClickerCountDisplay)
 	}
 
 	let auto = document.getElementById("criquer");
