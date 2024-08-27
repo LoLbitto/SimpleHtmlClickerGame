@@ -1,3 +1,3 @@
-# Cookie-clicker-da-deepweb
+# Simples Clicker Game
 
-Projeto para se devertir apenas :)
+We just did this on a free time we had at school just for fun.
